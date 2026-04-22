@@ -6,7 +6,7 @@
 /*   By: alebarbo <alebarbo@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/22 22:37:40 by alebarbo          #+#    #+#             */
-/*   Updated: 2026/04/23 00:12:27 by alebarbo         ###   ########.fr       */
+/*   Updated: 2026/04/23 00:54:02 by alebarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,19 @@
 
 Cat::Cat() : Animal()
 {
+	std::cout << "Default Cat constructor called." << std::endl;
 	this->Animal::setType("Cat");
 }
 
 Cat::Cat(const Cat &copy) : Animal(copy)
 {
+	std::cout << "Copy Cat constructor called." << std::endl;
 	*this = copy;
 }
 
 Cat::~Cat()
 {
+	std::cout << "Cat destructor called." << std::endl;
 }
 
 Cat &Cat::operator=(const Cat &copy)

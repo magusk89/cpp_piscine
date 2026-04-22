@@ -6,7 +6,7 @@
 /*   By: alebarbo <alebarbo@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/22 22:37:18 by alebarbo          #+#    #+#             */
-/*   Updated: 2026/04/23 00:12:38 by alebarbo         ###   ########.fr       */
+/*   Updated: 2026/04/23 00:53:39 by alebarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,19 @@
 
 Dog::Dog() : Animal()
 {
+	std::cout << "Default Dog constructor called." << std::endl;
 	this->Animal::setType("Dog");
 }
 
 Dog::Dog(const Dog &copy) : Animal(copy)
 {
+	std::cout << "Copy Dog constructor called." << std::endl;
 	*this = copy;
 }
 
 Dog::~Dog()
 {
+	std::cout << "Dog destructor called." << std::endl;
 }
 
 Dog &Dog::operator=(const Dog &copy)
