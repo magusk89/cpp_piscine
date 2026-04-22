@@ -6,7 +6,7 @@
 /*   By: alebarbo <alebarbo@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/22 22:35:23 by alebarbo          #+#    #+#             */
-/*   Updated: 2026/04/23 00:21:09 by alebarbo         ###   ########.fr       */
+/*   Updated: 2026/04/23 00:33:37 by alebarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int main()
 	std::cout << j->getType() << " " << std::endl;
 	j->makeSound();
 	std::cout << i->getType() << " " << std::endl;
-	i->makeSound(); //will output the cat sound!
+	i->makeSound();
 	std::cout << meta->getType() << " " << std::endl;
 	meta->makeSound();
 	std::cout << wrong_meta->getType() << " " << std::endl;
