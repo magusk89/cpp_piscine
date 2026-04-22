@@ -6,12 +6,12 @@
 #    By: alebarbo <alebarbo@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/12/30 20:53:45 by alebarbo          #+#    #+#              #
-#    Updated: 2026/03/16 19:53:14 by alebarbo         ###   ########.fr        #
+#    Updated: 2026/04/23 00:04:20 by alebarbo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # NAMES
-NAME			= 
+NAME			= poly
 
 # PATHS
 SOURCE_PATH		= source
@@ -20,7 +20,12 @@ BUILD_PATH		= .build
 
 # SOURCE FILES
 SOURCE			= $(addprefix $(SOURCE_PATH)/, \
+				Animal.cpp \
+				Cat.cpp \
+				Dog.cpp \
 				main.cpp \
+				WrongAnimal.cpp \
+				WrongCat.cpp \
 )
 
 # OBJECT FILES
