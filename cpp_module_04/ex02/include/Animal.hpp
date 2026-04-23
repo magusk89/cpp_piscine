@@ -6,7 +6,7 @@
 /*   By: alebarbo <alebarbo@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/22 22:36:11 by alebarbo          #+#    #+#             */
-/*   Updated: 2026/04/23 15:46:15 by alebarbo         ###   ########.fr       */
+/*   Updated: 2026/04/23 15:51:48 by alebarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,11 @@ class Animal
 {
 	protected:
 		std::string		type;
-
+		
+		public:
 						Animal();
 						Animal(const Animal &copy);
 		Animal			&operator=(const Animal &copy);
-
-	public:
 		virtual			~Animal();
 		std::string		getType() const;
 		void			setType(std::string type);
