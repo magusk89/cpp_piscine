@@ -6,7 +6,7 @@
 /*   By: alebarbo <alebarbo@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/22 22:38:04 by alebarbo          #+#    #+#             */
-/*   Updated: 2026/04/23 00:54:59 by alebarbo         ###   ########.fr       */
+/*   Updated: 2026/04/23 14:29:06 by alebarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ WrongCat::~WrongCat()
 WrongCat &WrongCat::operator=(const WrongCat &copy)
 {
 	if (&copy != this)
-		this->setType(copy.type);
+		this->setType(copy.getType());
 	return (*this);
 }
 

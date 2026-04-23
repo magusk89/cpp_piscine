@@ -6,12 +6,12 @@
 #    By: alebarbo <alebarbo@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/12/30 20:53:45 by alebarbo          #+#    #+#              #
-#    Updated: 2026/04/23 00:04:20 by alebarbo         ###   ########.fr        #
+#    Updated: 2026/04/23 14:16:23 by alebarbo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # NAMES
-NAME			= poly
+NAME			= animal
 
 # PATHS
 SOURCE_PATH		= source

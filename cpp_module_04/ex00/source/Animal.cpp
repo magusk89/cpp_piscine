@@ -6,7 +6,7 @@
 /*   By: alebarbo <alebarbo@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/22 22:37:05 by alebarbo          #+#    #+#             */
-/*   Updated: 2026/04/23 00:51:54 by alebarbo         ###   ########.fr       */
+/*   Updated: 2026/04/23 14:28:25 by alebarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ Animal::~Animal()
 Animal &Animal::operator=(const Animal &copy)
 {
 	if (&copy != this)
-		this->setType(copy.type);
+		this->setType(copy.getType());
 	return (*this);
 }
 

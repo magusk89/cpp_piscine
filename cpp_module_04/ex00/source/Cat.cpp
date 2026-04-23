@@ -6,7 +6,7 @@
 /*   By: alebarbo <alebarbo@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/22 22:37:40 by alebarbo          #+#    #+#             */
-/*   Updated: 2026/04/23 00:54:02 by alebarbo         ###   ########.fr       */
+/*   Updated: 2026/04/23 14:28:40 by alebarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ Cat::~Cat()
 Cat &Cat::operator=(const Cat &copy)
 {
 	if (&copy != this)
-		this->Animal::setType(copy.type);
+		this->Animal::setType(copy.getType());
 	return (*this);
 }
 

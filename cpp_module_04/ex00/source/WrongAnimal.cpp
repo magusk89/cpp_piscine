@@ -6,7 +6,7 @@
 /*   By: alebarbo <alebarbo@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/22 22:37:53 by alebarbo          #+#    #+#             */
-/*   Updated: 2026/04/23 00:54:32 by alebarbo         ###   ########.fr       */
+/*   Updated: 2026/04/23 14:28:56 by alebarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ WrongAnimal::~WrongAnimal()
 WrongAnimal &WrongAnimal::operator=(const WrongAnimal &copy)
 {
 	if (&copy != this)
-		this->setType(copy.type);
+		this->setType(copy.getType());
 	return (*this);
 }
 
