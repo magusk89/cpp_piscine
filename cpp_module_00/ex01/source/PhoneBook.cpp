@@ -6,7 +6,7 @@
 /*   By: alebarbo <alebarbo@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/30 22:30:55 by alebarbo          #+#    #+#             */
-/*   Updated: 2026/01/03 00:24:22 by alebarbo         ###   ########.fr       */
+/*   Updated: 2026/04/24 23:00:16 by alebarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,16 +70,33 @@ void PhoneBook::add(void)
 
 void PhoneBook::search(void)
 {
-	unsigned int	index = 0;
+	std::string		input;
+	unsigned int	index;
 
 	while (index < 1 || index > 8)
 	{
-		index = 0;
 		display_list();
 		std::cout << DFL_IPT;
-		std::cin >> index;
-		std::cin.clear();
-		std::cin.ignore();
+		index = 0;
+		if (!(std::getline(std::cin, input)))
+			return ;
+		if (!input.compare("1"))
+			index = 1;
+		if (!input.compare("2"))
+			index = 2;
+		if (!input.compare("3"))
+			index = 3;
+		if (!input.compare("4"))
+			index = 4;
+		if (!input.compare("5"))
+			index = 5;
+		if (!input.compare("6"))
+			index = 6;
+		if (!input.compare("7"))
+			index = 7;
+		if (!input.compare("8"))
+			index = 8;
+		std::cout << "\x1b[1A\x1b[29C\x1b[0K";
 	}
 	display_contact(index - 1);
 }

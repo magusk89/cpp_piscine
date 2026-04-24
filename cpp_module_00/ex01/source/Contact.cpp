@@ -6,7 +6,7 @@
 /*   By: alebarbo <alebarbo@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/31 02:12:20 by alebarbo          #+#    #+#             */
-/*   Updated: 2026/01/05 00:24:02 by alebarbo         ###   ########.fr       */
+/*   Updated: 2026/04/24 22:06:46 by alebarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,13 @@ void Contact::set_index(unsigned int index)
 void Contact::set_first_name(void)
 {
 	m_first_name = "";
+	std::cout << "FIRST NAME: ";
 	while (m_first_name.empty())
 	{
-		std::cout << "FIRST NAME: ";
-		std::getline(std::cin, m_first_name);
+		if (!(std::getline(std::cin, m_first_name)))
+			return ;
+		if (m_first_name.empty())
+			std::cout << "\x1b[1A\x1b[12C";
 		std::cin.clear();
 	}
 }
@@ -31,10 +34,13 @@ void Contact::set_first_name(void)
 void Contact::set_last_name(void)
 {
 	m_last_name = "";
+	std::cout << "LAST NAME: ";
 	while (m_last_name.empty())
 	{
-		std::cout << "LAST NAME: ";
-		std::getline(std::cin, m_last_name);
+		if (!(std::getline(std::cin, m_last_name)))
+			return ;
+		if (m_last_name.empty())
+			std::cout << "\x1b[1A\x1b[11C";
 		std::cin.clear();
 	}
 }
@@ -42,10 +48,13 @@ void Contact::set_last_name(void)
 void Contact::set_nickname(void)
 {
 	m_nickname = "";
+	std::cout << "NICKNAME: ";
 	while (m_nickname.empty())
 	{
-		std::cout << "NICKNAME: ";
-		std::getline(std::cin, m_nickname);
+		if (!(std::getline(std::cin, m_nickname)))
+			return ;
+		if (m_nickname.empty())
+			std::cout << "\x1b[1A\x1b[10C";
 		std::cin.clear();
 	}
 }
@@ -53,10 +62,13 @@ void Contact::set_nickname(void)
 void Contact::set_phone_number(void)
 {
 	m_phone_number = "";
+	std::cout << "PHONE NUMBER: ";
 	while (m_phone_number.empty())
 	{
-		std::cout << "PHONE NUMBER: ";
-		std::getline(std::cin, m_phone_number);
+		if (!(std::getline(std::cin, m_phone_number)))
+			return ;
+		if (m_phone_number.empty())
+			std::cout << "\x1b[1A\x1b[14C";
 		std::cin.clear();
 	}
 }
@@ -64,10 +76,13 @@ void Contact::set_phone_number(void)
 void Contact::set_dark_secret(void)
 {
 	m_dark_secret = "";
+	std::cout << "DARKEST SECRET: ";
 	while (m_dark_secret.empty())
 	{
-		std::cout << "DARKEST SECRET: ";
-		std::getline(std::cin, m_dark_secret);
+		if (!(std::getline(std::cin, m_dark_secret)))
+			return ;
+		if (m_dark_secret.empty())
+			std::cout << "\x1b[1A\x1b[16C";
 		std::cin.clear();
 	}
 }
