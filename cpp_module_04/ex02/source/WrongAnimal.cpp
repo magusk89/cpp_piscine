@@ -6,7 +6,7 @@
 /*   By: alebarbo <alebarbo@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/22 22:37:53 by alebarbo          #+#    #+#             */
-/*   Updated: 2026/04/23 14:28:56 by alebarbo         ###   ########.fr       */
+/*   Updated: 2026/04/24 21:31:27 by alebarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ WrongAnimal::WrongAnimal() : type("WrongAnimal")
 WrongAnimal::WrongAnimal(const WrongAnimal &copy)
 {
 	std::cout << "Copy WrongAnimal constructor called." << std::endl;
-	*this = copy;
+	this->setType(copy.getType());
 }
 
 WrongAnimal::~WrongAnimal()
