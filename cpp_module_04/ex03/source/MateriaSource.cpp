@@ -6,7 +6,7 @@
 /*   By: alebarbo <alebarbo@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/23 16:29:47 by alebarbo          #+#    #+#             */
-/*   Updated: 2026/04/24 16:16:53 by alebarbo         ###   ########.fr       */
+/*   Updated: 2026/04/24 20:54:57 by alebarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,12 @@ MateriaSource::MateriaSource()
 
 MateriaSource::MateriaSource(const MateriaSource &copy)
 {
-	*this = copy;
+	for (int i = 0; i < 4; i++)
+	{
+		this->inventory[i] = NULL;
+		if (copy.inventory[i] != NULL)
+			this->inventory[i] = copy.inventory[i]->clone();
+	}
 }
 
 MateriaSource::~MateriaSource()
@@ -39,7 +44,7 @@ MateriaSource &MateriaSource::operator=(const MateriaSource &copy)
 				delete this->inventory[i];
 			this->inventory[i] = NULL;
 			if (copy.inventory[i] != NULL)
-				this->inventory[i] = copy.inventory[i];
+				this->inventory[i] = copy.inventory[i]->clone();
 		}
 	}
 	return (*this);
@@ -49,7 +54,7 @@ void MateriaSource::learnMateria(AMateria *materia)
 {
 	for (int i = 0; i < 4; i++)
 	{
-		if (this->inventory[i] != NULL)
+		if (this->inventory[i] == NULL)
 		{
 			this->inventory[i] = materia;
 			return ;

@@ -6,20 +6,20 @@
 /*   By: alebarbo <alebarbo@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/23 15:58:53 by alebarbo          #+#    #+#             */
-/*   Updated: 2026/04/24 15:20:44 by alebarbo         ###   ########.fr       */
+/*   Updated: 2026/04/24 20:59:46 by alebarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <Ice.hpp>
 
-Ice::Ice()
+Ice::Ice() : AMateria()
 {
 	this->setType("ice");
 }
 
-Ice::Ice(const Ice &copy)
+Ice::Ice(const Ice &copy) : AMateria(copy)
 {
-	*this = copy;
+	this->setType(copy.getType());
 }
 
 Ice::~Ice()

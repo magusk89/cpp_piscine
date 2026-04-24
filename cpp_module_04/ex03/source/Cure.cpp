@@ -6,18 +6,18 @@
 /*   By: alebarbo <alebarbo@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/23 15:59:02 by alebarbo          #+#    #+#             */
-/*   Updated: 2026/04/24 15:23:34 by alebarbo         ###   ########.fr       */
+/*   Updated: 2026/04/24 20:59:42 by alebarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <Cure.hpp>
 
-Cure::Cure()
+Cure::Cure() : AMateria()
 {
 	this->setType("cure");
 }
 
-Cure::Cure(const Cure &copy)
+Cure::Cure(const Cure &copy) : AMateria(copy)
 {
 	this->setType(copy.getType());
 }

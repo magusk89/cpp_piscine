@@ -6,7 +6,7 @@
 /*   By: alebarbo <alebarbo@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/23 16:16:35 by alebarbo          #+#    #+#             */
-/*   Updated: 2026/04/24 16:16:49 by alebarbo         ###   ########.fr       */
+/*   Updated: 2026/04/24 20:57:50 by alebarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,19 @@ Character::Character(std::string const &name)
 
 Character::Character(const Character &copy)
 {
-	*this = copy;
+	this->setName(copy.getName());
+	for (int i = 0; i < 4; i++)
+	{
+		this->inventory[i] = NULL;
+		if (copy.inventory[i] != NULL)
+			this->inventory[i] = copy.inventory[i]->clone();
+	}
+	for (int i = 0; i < 99; i++)
+	{
+		this->floor[i] = NULL;
+		if (copy.floor[i] != NULL)
+			this->floor[i] = copy.floor[i]->clone();
+	}
 }
 
 Character::~Character()
