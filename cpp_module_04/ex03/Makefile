@@ -6,7 +6,7 @@
 #    By: alebarbo <alebarbo@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/12/30 20:53:45 by alebarbo          #+#    #+#              #
-#    Updated: 2026/04/23 15:49:17 by alebarbo         ###   ########.fr        #
+#    Updated: 2026/04/24 16:02:29 by alebarbo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,12 @@ BUILD_PATH		= .build
 
 # SOURCE FILES
 SOURCE			= $(addprefix $(SOURCE_PATH)/, \
+				AMateria.cpp \
+				Character.cpp \
+				Cure.cpp \
+				Ice.cpp \
 				main.cpp \
+				MateriaSource.cpp \
 )
 
 # OBJECT FILES
