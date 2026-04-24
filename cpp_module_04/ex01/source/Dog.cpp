@@ -6,23 +6,24 @@
 /*   By: alebarbo <alebarbo@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/22 22:37:18 by alebarbo          #+#    #+#             */
-/*   Updated: 2026/04/23 15:03:54 by alebarbo         ###   ########.fr       */
+/*   Updated: 2026/04/24 21:36:16 by alebarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <Dog.hpp>
 
-Dog::Dog() : Animal()
+Dog::Dog() : Animal(), Brain()
 {
 	std::cout << "Default Dog constructor called." << std::endl;
 	this->setBrain(new Brain());
-	this->Animal::setType("Dog");
+	this->setType("Dog");
 }
 
-Dog::Dog(const Dog &copy) : Animal(copy)
+Dog::Dog(const Dog &copy) : Animal(copy), Brain(copy)
 {
 	std::cout << "Copy Dog constructor called." << std::endl;
-	*this = copy;
+	this->setType(copy.getType());
+	this->setBrain(copy.getBrain());
 }
 
 Dog::~Dog()
@@ -35,7 +36,7 @@ Dog &Dog::operator=(const Dog &copy)
 {
 	if (&copy != this)
 	{
-		this->Animal::setType(copy.getType());
+		this->setType(copy.getType());
 		this->setBrain(copy.getBrain());
 	}
 	return (*this);
