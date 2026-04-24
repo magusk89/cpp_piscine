@@ -6,7 +6,7 @@
 /*   By: alebarbo <alebarbo@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/22 22:37:18 by alebarbo          #+#    #+#             */
-/*   Updated: 2026/04/23 14:28:48 by alebarbo         ###   ########.fr       */
+/*   Updated: 2026/04/24 21:38:25 by alebarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ Dog::Dog() : Animal()
 Dog::Dog(const Dog &copy) : Animal(copy)
 {
 	std::cout << "Copy Dog constructor called." << std::endl;
-	*this = copy;
+	this->Animal::setType(copy.getType());
 }
 
 Dog::~Dog()

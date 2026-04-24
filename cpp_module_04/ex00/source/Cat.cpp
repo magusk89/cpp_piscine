@@ -6,7 +6,7 @@
 /*   By: alebarbo <alebarbo@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/22 22:37:40 by alebarbo          #+#    #+#             */
-/*   Updated: 2026/04/23 14:28:40 by alebarbo         ###   ########.fr       */
+/*   Updated: 2026/04/24 21:38:18 by alebarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ Cat::Cat() : Animal()
 Cat::Cat(const Cat &copy) : Animal(copy)
 {
 	std::cout << "Copy Cat constructor called." << std::endl;
-	*this = copy;
+	this->Animal::setType(copy.getType());
 }
 
 Cat::~Cat()

@@ -6,7 +6,7 @@
 /*   By: alebarbo <alebarbo@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/22 22:37:05 by alebarbo          #+#    #+#             */
-/*   Updated: 2026/04/23 14:28:25 by alebarbo         ###   ########.fr       */
+/*   Updated: 2026/04/24 21:38:09 by alebarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ Animal::Animal() : type("Animal")
 Animal::Animal(const Animal &copy)
 {
 	std::cout << "Copy Animal constructor called." << std::endl;
-	*this = copy;
+	this->setType(copy.getType());
 }
 
 Animal::~Animal()

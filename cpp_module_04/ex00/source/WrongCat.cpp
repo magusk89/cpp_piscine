@@ -6,7 +6,7 @@
 /*   By: alebarbo <alebarbo@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/22 22:38:04 by alebarbo          #+#    #+#             */
-/*   Updated: 2026/04/23 14:29:06 by alebarbo         ###   ########.fr       */
+/*   Updated: 2026/04/24 21:38:41 by alebarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ WrongCat::WrongCat() : WrongAnimal()
 WrongCat::WrongCat(const WrongCat &copy) : WrongAnimal(copy)
 {
 	std::cout << "Copy WrongCat constructor called." << std::endl;
-	*this = copy;
+	this->setType(copy.getType());
 }
 
 WrongCat::~WrongCat()
