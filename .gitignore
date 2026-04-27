@@ -73,6 +73,7 @@ Mkfile.old
 dkms.conf
 
 # Test files
+*_shrubbery
 19920104_091532.log
 cpp_module_07/main.cpp
 cpp_module_09/data.csv

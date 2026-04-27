@@ -6,7 +6,7 @@
 /*   By: alebarbo <alebarbo@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/25 14:46:16 by alebarbo          #+#    #+#             */
-/*   Updated: 2026/04/27 01:47:25 by alebarbo         ###   ########.fr       */
+/*   Updated: 2026/04/27 23:12:46 by alebarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,13 @@ class AForm
 	{
 		public:
 								GradeTooLowException();
+			const char			*what() const throw();
+	};
+
+	class FormNotSigned: public std::exception
+	{
+		public:
+								FormNotSigned();
 			const char			*what() const throw();
 	};
 };

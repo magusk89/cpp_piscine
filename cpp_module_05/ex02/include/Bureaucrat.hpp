@@ -6,7 +6,7 @@
 /*   By: alebarbo <alebarbo@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/25 01:17:01 by alebarbo          #+#    #+#             */
-/*   Updated: 2026/04/27 01:38:59 by alebarbo         ###   ########.fr       */
+/*   Updated: 2026/04/27 22:52:41 by alebarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ class Bureaucrat
 		void				decrementGrade();
 		void				tryGrade(const short int &grade);
 		void				signForm(AForm &form) const;
+		void				executeForm(AForm const &form) const;
 
 	class GradeTooHighException: public std::exception
 	{

@@ -6,7 +6,7 @@
 /*   By: alebarbo <alebarbo@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/25 01:27:00 by alebarbo          #+#    #+#             */
-/*   Updated: 2026/04/27 01:39:20 by alebarbo         ###   ########.fr       */
+/*   Updated: 2026/04/27 23:04:48 by alebarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -138,4 +138,9 @@ void Bureaucrat::signForm(AForm &form) const
 	form.beSigned(*this);
 	if (form.getIsSigned())
 		std::cout << this->getName() << " signed form " << form.getName() << "." << std::endl;
+}
+
+void Bureaucrat::executeForm(AForm const &form) const
+{
+	std::cout << this->getName() << " executed " << form.getName() << "." << std::endl;
 }
