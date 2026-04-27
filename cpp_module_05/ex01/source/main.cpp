@@ -6,29 +6,45 @@
 /*   By: alebarbo <alebarbo@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/25 14:29:46 by alebarbo          #+#    #+#             */
-/*   Updated: 2026/04/27 01:20:04 by alebarbo         ###   ########.fr       */
+/*   Updated: 2026/04/27 01:23:00 by alebarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <Bureaucrat.hpp>
+#include <Form.hpp>
 
 int main(void)
 {
-	Bureaucrat	a;
-	Bureaucrat	b("b", 1);
+	Bureaucrat	john("John", 7);
+	Bureaucrat	greg("Greg", 98);
+	Form		oneA("1a", 15, 5);
+	Form		sevenK("7k", 140, 100);
+	Form		nineP("9p", 3, 1);
 
-	a.decrementGrade();
-	std::cout << std::endl;
-	b.incrementGrade();
+	std::cout << john << std::endl;
+	std::cout << greg << std::endl;
+
+	std::cout << oneA << std::endl;
+	std::cout << sevenK << std::endl;
+	std::cout << nineP << std::endl;
+
+	greg.signForm(oneA);
+	greg.signForm(sevenK);
+	greg.signForm(nineP);
 	std::cout << std::endl;
 
-	a.incrementGrade();
-	std::cout << "Bureaucrat " << a.getName() << " was promoted to a higher grade: " << a.getGrade() << std::endl;
+	std::cout << oneA << std::endl;
+	std::cout << sevenK << std::endl;
+	std::cout << nineP << std::endl;
+
+	john.signForm(oneA);
+	john.signForm(sevenK);
+	john.signForm(nineP);
 	std::cout << std::endl;
 
-	b.decrementGrade();
-	std::cout << "Bureaucrat " << b.getName() << " was demoted to a lower grade: " << b.getGrade() << std::endl;
-	std::cout << std::endl;
+	std::cout << oneA << std::endl;
+	std::cout << sevenK << std::endl;
+	std::cout << nineP << std::endl;
 
 	return 0;
 }

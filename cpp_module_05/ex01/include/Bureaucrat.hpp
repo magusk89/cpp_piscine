@@ -6,7 +6,7 @@
 /*   By: alebarbo <alebarbo@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/25 01:17:01 by alebarbo          #+#    #+#             */
-/*   Updated: 2026/04/25 14:50:17 by alebarbo         ###   ########.fr       */
+/*   Updated: 2026/04/27 00:34:06 by alebarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 # define BUREAUCRAT_HPP
 # include <iostream>
 # include <exception>
+# include <Form.hpp>
+
+class Form;
 
 class Bureaucrat
 {
@@ -33,6 +36,7 @@ class Bureaucrat
 		void				incrementGrade();
 		void				decrementGrade();
 		void				tryGrade(const short int &grade);
+		void				signForm(Form &form) const;
 
 	class GradeTooHighException: public std::exception
 	{
