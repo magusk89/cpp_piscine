@@ -57,6 +57,7 @@ bureaucrat
 form
 moreforms
 intern
+convert
 
 # Debug files
 *.dSYM/
