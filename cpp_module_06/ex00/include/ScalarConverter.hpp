@@ -6,13 +6,17 @@
 /*   By: alebarbo <alebarbo@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/28 02:29:41 by alebarbo          #+#    #+#             */
-/*   Updated: 2026/04/28 02:41:21 by alebarbo         ###   ########.fr       */
+/*   Updated: 2026/05/01 23:27:45 by alebarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SCALARCONVERTER_HPP
 # define SCALARCONVERTER_HPP
+# include <cstdlib>
+# include <iomanip>
 # include <iostream>
+# include <cmath>
+# include <climits>
 
 class ScalarConverter
 {
