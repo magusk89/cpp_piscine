@@ -1,24 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Data.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alebarbo <alebarbo@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/28 02:47:12 by alebarbo          #+#    #+#             */
-/*   Updated: 2026/05/02 02:43:13 by alebarbo         ###   ########.fr       */
+/*   Created: 2026/05/02 02:20:10 by alebarbo          #+#    #+#             */
+/*   Updated: 2026/05/02 02:54:31 by alebarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ScalarConverter.hpp>
+#ifndef DATA_H
+# define DATA_H
+# include <stdint.h>
+# include <iostream>
 
-int main(int argc, char *argv[])
+struct Data
 {
-	if (argc != 2)
-	{
-		std::cout << "Usage: \"./scalar <argument_to_convert>\"" << std::endl;
-		return 1;
-	}
-	ScalarConverter::convert(std::string(argv[1]));
-	return 0;
-}
+	std::string		type;
+	std::string		value;
+};
+
+#endif

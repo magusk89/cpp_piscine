@@ -6,12 +6,12 @@
 #    By: alebarbo <alebarbo@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/12/30 20:53:45 by alebarbo          #+#    #+#              #
-#    Updated: 2026/05/02 02:10:12 by alebarbo         ###   ########.fr        #
+#    Updated: 2026/05/02 02:52:54 by alebarbo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # NAMES
-NAME			= scalar
+NAME			= serial
 
 # PATHS
 SOURCE_PATH		= source
@@ -21,7 +21,7 @@ BUILD_PATH		= .build
 # SOURCE FILES
 SOURCE			= $(addprefix $(SOURCE_PATH)/, \
 				main.cpp \
-				ScalarConverter.cpp \
+				Serializer.cpp \
 )
 
 # OBJECT FILES
