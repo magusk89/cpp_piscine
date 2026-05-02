@@ -6,12 +6,12 @@
 /*   By: alebarbo <alebarbo@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/02 14:29:53 by alebarbo          #+#    #+#             */
-/*   Updated: 2026/05/02 15:00:23 by alebarbo         ###   ########.fr       */
+/*   Updated: 2026/05/02 19:11:14 by alebarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WHATEVER_H
-# define WHATEVER_H
+#ifndef WHATEVER_HPP
+# define WHATEVER_HPP
 # include <iostream>
 
 template <typename T>

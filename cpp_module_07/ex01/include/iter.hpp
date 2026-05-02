@@ -1,33 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   iter.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alebarbo <alebarbo@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/02 15:09:25 by alebarbo          #+#    #+#             */
-/*   Updated: 2026/05/02 19:11:32 by alebarbo         ###   ########.fr       */
+/*   Created: 2026/05/02 15:05:05 by alebarbo          #+#    #+#             */
+/*   Updated: 2026/05/02 19:11:47 by alebarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iter.hpp>
+#ifndef ITER_HPP
+# define ITER_HPP
+# include <iostream>
 
 template <typename T>
-void printer(T toPrint)
+void iter(T *array, const size_t length, void (*f)(T&))
 {
-	std::cout << toPrint << std::endl;
+	for (size_t i = 0; i < length; i++)
+		(*f)(array[i]);
 }
 
-int main(void)
-{
-	int				intArray[5] = {1, 2, 3, 4, 5};
-	std::string		stringArray[3] = {"Another one", "And another one", "And a last one"};
-
-	::iter(intArray, 5, printer);
-	std::cout << std::endl;
-	::iter("This is an example", 18, printer);
-	std::cout << std::endl;
-	::iter(stringArray, 3, printer);
-
-	return (0);
-}
+#endif

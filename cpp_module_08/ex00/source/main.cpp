@@ -5,29 +5,30 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: alebarbo <alebarbo@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/02 15:09:25 by alebarbo          #+#    #+#             */
-/*   Updated: 2026/05/02 19:11:32 by alebarbo         ###   ########.fr       */
+/*   Created: 2026/05/02 19:20:10 by alebarbo          #+#    #+#             */
+/*   Updated: 2026/05/02 19:33:38 by alebarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iter.hpp>
-
-template <typename T>
-void printer(T toPrint)
-{
-	std::cout << toPrint << std::endl;
-}
+#include <easyfind.hpp>
+#include <easyfind.tpp>
 
 int main(void)
 {
-	int				intArray[5] = {1, 2, 3, 4, 5};
-	std::string		stringArray[3] = {"Another one", "And another one", "And a last one"};
+	std::vector<int>	container;
 
-	::iter(intArray, 5, printer);
-	std::cout << std::endl;
-	::iter("This is an example", 18, printer);
-	std::cout << std::endl;
-	::iter(stringArray, 3, printer);
+	for (int i = 0; i < 5; i++)
+		container.insert(container.begin() + i, i);
 
-	return (0);
+	try
+	{
+		std::cout << *(::easyfind(container, 2)) << std::endl;
+		std::cout << *(::easyfind(container, 4)) << std::endl;
+		std::cout << *(::easyfind(container, 10)) << std::endl;
+	}
+	catch(std::exception &e)
+	{
+		std::cerr << e.what() << std::endl;
+	}
+	
 }

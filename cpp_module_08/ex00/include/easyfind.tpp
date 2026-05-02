@@ -1,33 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   easyfind.tpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alebarbo <alebarbo@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/02 15:09:25 by alebarbo          #+#    #+#             */
-/*   Updated: 2026/05/02 19:11:32 by alebarbo         ###   ########.fr       */
+/*   Created: 2026/05/02 19:12:10 by alebarbo          #+#    #+#             */
+/*   Updated: 2026/05/02 19:40:20 by alebarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iter.hpp>
+#include <easyfind.hpp>
 
 template <typename T>
-void printer(T toPrint)
+typename T::iterator easyfind(const T &container, const int item)
 {
-	std::cout << toPrint << std::endl;
+	for (typename T::iterator i = const_cast<T&>(container).begin(); i != container.end(); i++)
+		if (*i == item)
+			return (i);
+	throw NotFound();
 }
 
-int main(void)
+const char *NotFound::what() const throw()
 {
-	int				intArray[5] = {1, 2, 3, 4, 5};
-	std::string		stringArray[3] = {"Another one", "And another one", "And a last one"};
-
-	::iter(intArray, 5, printer);
-	std::cout << std::endl;
-	::iter("This is an example", 18, printer);
-	std::cout << std::endl;
-	::iter(stringArray, 3, printer);
-
-	return (0);
+	return ("Error: item not found!");
 }
