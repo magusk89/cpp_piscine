@@ -6,7 +6,7 @@
 /*   By: alebarbo <alebarbo@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/25 14:47:10 by alebarbo          #+#    #+#             */
-/*   Updated: 2026/04/27 01:23:39 by alebarbo         ###   ########.fr       */
+/*   Updated: 2026/05/02 17:05:46 by alebarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ void Form::beSigned(const Bureaucrat &bureaucrat)
 	}
 	catch (GradeTooLowException &e)
 	{
-		std::cout << bureaucrat.getName() << " can't sign form " << this->getName() << ". " << e.what() << std::endl;
+		std::cerr << bureaucrat.getName() << " can't sign form " << this->getName() << ". " << e.what() << std::endl;
 	}
 }
 
@@ -83,11 +83,11 @@ void Form::tryGrade(const short int &grade)
 	}
 	catch (GradeTooHighException &e)
 	{
-		std::cout << "Exception caught: " << e.what() << std::endl;
+		std::cerr << "Exception caught: " << e.what() << std::endl;
 	}
 	catch (GradeTooLowException &e)
 	{
-		std::cout << "Exception caught: " << e.what() << std::endl;
+		std::cerr << "Exception caught: " << e.what() << std::endl;
 	}
 }
 

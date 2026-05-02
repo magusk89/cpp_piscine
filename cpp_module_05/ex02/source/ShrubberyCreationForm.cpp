@@ -6,7 +6,7 @@
 /*   By: alebarbo <alebarbo@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/27 22:36:03 by alebarbo          #+#    #+#             */
-/*   Updated: 2026/04/27 23:37:34 by alebarbo         ###   ########.fr       */
+/*   Updated: 2026/05/02 17:07:04 by alebarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,14 +74,14 @@ void ShrubberyCreationForm::execute(Bureaucrat const &executor) const
 	}
 	catch(FormNotSigned &e)
 	{
-		std::cout << "Bureaucrat " << executor.getName() << " can't execute form " << this->getName() << ". " << e.what() << std::endl;
+		std::cerr << "Bureaucrat " << executor.getName() << " can't execute form " << this->getName() << ". " << e.what() << std::endl;
 	}
 	catch(GradeTooLowException &e)
 	{
-		std::cout << "Bureaucrat " << executor.getName() << " can't execute form " << this->getName() << ". " << e.what() << std::endl;
+		std::cerr << "Bureaucrat " << executor.getName() << " can't execute form " << this->getName() << ". " << e.what() << std::endl;
 	}
 	catch(FileNotOpen &e)
 	{
-		std::cout << e.what() << std::endl;
+		std::cerr << e.what() << std::endl;
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: alebarbo <alebarbo@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/25 01:27:00 by alebarbo          #+#    #+#             */
-/*   Updated: 2026/04/27 01:13:41 by alebarbo         ###   ########.fr       */
+/*   Updated: 2026/05/02 17:05:54 by alebarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,13 +83,13 @@ void Bureaucrat::tryGrade(const short int &grade)
 	}
 	catch (GradeTooHighException &e)
 	{
-		std::cout << "Exception caught: " << e.what() << " New grade: " << e.getGrade() << std::endl;
-		std::cout << "Bureaucrat " << this->getName() << " already has the maximum grade: " << this->getGrade() << std::endl;
+		std::cerr << "Exception caught: " << e.what() << " New grade: " << e.getGrade() << std::endl;
+		std::cerr << "Bureaucrat " << this->getName() << " already has the maximum grade: " << this->getGrade() << std::endl;
 	}
 	catch (GradeTooLowException &e)
 	{
-		std::cout << "Exception caught: " << e.what() << " New grade: " << e.getGrade() << std::endl;
-		std::cout << "Bureaucrat " << this->getName() << " already has the minimum grade: " << this->getGrade() << std::endl;
+		std::cerr << "Exception caught: " << e.what() << " New grade: " << e.getGrade() << std::endl;
+		std::cerr << "Bureaucrat " << this->getName() << " already has the minimum grade: " << this->getGrade() << std::endl;
 	}
 }
 

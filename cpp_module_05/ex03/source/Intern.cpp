@@ -6,7 +6,7 @@
 /*   By: alebarbo <alebarbo@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/27 23:44:41 by alebarbo          #+#    #+#             */
-/*   Updated: 2026/04/28 02:16:36 by alebarbo         ###   ########.fr       */
+/*   Updated: 2026/05/02 17:08:41 by alebarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ AForm *Intern::makeForm(std::string form, std::string target)
 	}
 	catch (FormDoesNotExist &e)
 	{
-		std::cout << e.what() << std::endl;
+		std::cerr << e.what() << std::endl;
 		return (NULL);
 	}
 }

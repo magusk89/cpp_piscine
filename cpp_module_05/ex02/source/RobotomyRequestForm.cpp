@@ -57,10 +57,10 @@ void RobotomyRequestForm::execute(Bureaucrat const &executor) const
 	}
 	catch(FormNotSigned &e)
 	{
-		std::cout << "Bureaucrat " << executor.getName() << " can't execute form " << this->getName() << ". " << e.what() << std::endl;
+		std::cerr << "Bureaucrat " << executor.getName() << " can't execute form " << this->getName() << ". " << e.what() << std::endl;
 	}
 	catch(GradeTooLowException &e)
 	{
-		std::cout << "Bureaucrat " << executor.getName() << " can't execute form " << this->getName() << ". " << e.what() << std::endl;
+		std::cerr << "Bureaucrat " << executor.getName() << " can't execute form " << this->getName() << ". " << e.what() << std::endl;
 	}
 }
