@@ -6,12 +6,11 @@
 /*   By: alebarbo <alebarbo@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/02 19:20:10 by alebarbo          #+#    #+#             */
-/*   Updated: 2026/05/02 19:33:38 by alebarbo         ###   ########.fr       */
+/*   Updated: 2026/05/02 22:10:26 by alebarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <easyfind.hpp>
-#include <easyfind.tpp>
 
 int main(void)
 {

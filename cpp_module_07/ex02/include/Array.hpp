@@ -6,7 +6,7 @@
 /*   By: alebarbo <alebarbo@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/02 15:32:52 by alebarbo          #+#    #+#             */
-/*   Updated: 2026/05/02 18:07:15 by alebarbo         ###   ########.fr       */
+/*   Updated: 2026/05/02 22:10:19 by alebarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,7 @@ class Array
 				const char	*what() const throw();
 		};
 };
+
+# include <Array.tpp>
 
 #endif

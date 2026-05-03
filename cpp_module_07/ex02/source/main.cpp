@@ -6,12 +6,11 @@
 /*   By: alebarbo <alebarbo@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/02 18:09:19 by alebarbo          #+#    #+#             */
-/*   Updated: 2026/05/02 18:15:40 by alebarbo         ###   ########.fr       */
+/*   Updated: 2026/05/02 22:09:12 by alebarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <Array.hpp>
-#include <Array.tpp>
 
 int main(void)
 {
