@@ -6,7 +6,7 @@
 /*   By: alebarbo <alebarbo@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/02 19:20:10 by alebarbo          #+#    #+#             */
-/*   Updated: 2026/05/02 22:10:26 by alebarbo         ###   ########.fr       */
+/*   Updated: 2026/05/03 04:33:36 by alebarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ int main(void)
 
 	try
 	{
-		std::cout << *(::easyfind(container, 2)) << std::endl;
-		std::cout << *(::easyfind(container, 4)) << std::endl;
-		std::cout << *(::easyfind(container, 10)) << std::endl;
+		std::cout << ::easyfind(container, 2) << std::endl;
+		std::cout << ::easyfind(container, 4) << std::endl;
+		std::cout << ::easyfind(container, 10) << std::endl;
 	}
 	catch(std::exception &e)
 	{

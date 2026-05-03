@@ -6,7 +6,7 @@
 /*   By: alebarbo <alebarbo@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/02 18:25:54 by alebarbo          #+#    #+#             */
-/*   Updated: 2026/05/02 22:10:14 by alebarbo         ###   ########.fr       */
+/*   Updated: 2026/05/03 04:34:46 by alebarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 # define EASYFIND_HPP
 # include <iostream>
 # include <vector>
-# include <iterator>
+# include <algorithm>
 # include <exception>
 
 template <typename T>
-typename T::iterator easyfind(const T &container, const int item);
+int easyfind(const T &container, const int item);
 
 class NotFound: public std::exception
 {
