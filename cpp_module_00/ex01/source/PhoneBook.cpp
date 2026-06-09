@@ -6,7 +6,7 @@
 /*   By: alebarbo <alebarbo@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/30 22:30:55 by alebarbo          #+#    #+#             */
-/*   Updated: 2026/04/24 23:00:16 by alebarbo         ###   ########.fr       */
+/*   Updated: 2026/06/09 14:53:54 by alebarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,7 @@ void PhoneBook::search(void)
 	std::string		input;
 	unsigned int	index;
 
+	index = 0;
 	while (index < 1 || index > 8)
 	{
 		display_list();
