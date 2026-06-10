@@ -6,7 +6,7 @@
 #    By: alebarbo <alebarbo@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/12/30 20:53:45 by alebarbo          #+#    #+#              #
-#    Updated: 2026/01/03 15:11:22 by alebarbo         ###   ########.fr        #
+#    Updated: 2026/06/10 14:51:00 by alebarbo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,8 +14,8 @@
 NAME			= program
 
 # PATHS
-SOURCE_PATH		= source
-INCLUDE_PATH	= include
+SOURCE_PATH		= .
+INCLUDE_PATH	= .
 BUILD_PATH		= .build
 
 # SOURCE FILES
