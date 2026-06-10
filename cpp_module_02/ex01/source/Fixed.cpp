@@ -6,7 +6,7 @@
 /*   By: alebarbo <alebarbo@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/13 14:05:27 by alebarbo          #+#    #+#             */
-/*   Updated: 2026/03/13 16:03:31 by alebarbo         ###   ########.fr       */
+/*   Updated: 2026/06/10 22:06:44 by alebarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,28 +14,24 @@
 
 const int Fixed::fraction = 8;
 
-Fixed::Fixed()
+Fixed::Fixed() : value(0)
 {
 	std::cout << "Default constructor called" << std::endl;
-	this->setRawBits(0);
 }
 
-Fixed::Fixed(const Fixed &copy)
+Fixed::Fixed(const Fixed &copy) : value(copy.getRawBits())
 {
 	std::cout << "Copy constructor called" << std::endl;
-	*this = copy;
 }
 
-Fixed::Fixed(const int new_value)
+Fixed::Fixed(const int new_value) : value(new_value << this->fraction)
 {
 	std::cout << "Int constructor called" << std::endl;
-	this->setRawBits(new_value << this->fraction);
 }
 
-Fixed::Fixed(const float new_value)
+Fixed::Fixed(const float new_value) : value((int) roundf(new_value * (1 << this->fraction)))
 {
 	std::cout << "Float constructor called" << std::endl;
-	this->setRawBits((int) roundf(new_value * (1 << this->fraction)));
 }
 
 Fixed::~Fixed()
@@ -46,7 +42,8 @@ Fixed::~Fixed()
 Fixed &Fixed::operator=(const Fixed &copy)
 {
 	std::cout << "Copy assignment operator called" << std::endl;
-	this->setRawBits(copy.getRawBits());
+	if (this != &copy)
+		this->setRawBits(copy.getRawBits());
 	return (*this);
 }
 

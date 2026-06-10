@@ -6,7 +6,7 @@
 /*   By: alebarbo <alebarbo@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/13 14:05:27 by alebarbo          #+#    #+#             */
-/*   Updated: 2026/03/13 18:15:52 by alebarbo         ###   ########.fr       */
+/*   Updated: 2026/06/10 22:36:54 by alebarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,20 @@
 
 const int Fixed::fraction = 8;
 
-Fixed::Fixed()
+Fixed::Fixed() : value(0)
 {
-	this->setRawBits(0);
 }
 
-Fixed::Fixed(const Fixed &copy)
+Fixed::Fixed(const Fixed &copy) : value(copy.getRawBits())
 {
-	*this = copy;
 }
 
-Fixed::Fixed(const int new_value)
+Fixed::Fixed(const int new_value) : value(new_value << this->fraction)
 {
-	this->setRawBits(new_value << this->fraction);
 }
 
-Fixed::Fixed(const float new_value)
+Fixed::Fixed(const float new_value) : value((int) roundf(new_value * (1 << this->fraction)))
 {
-	this->setRawBits((int) roundf(new_value * (1 << this->fraction)));
 }
 
 Fixed::~Fixed()
@@ -40,7 +36,8 @@ Fixed::~Fixed()
 
 Fixed &Fixed::operator=(const Fixed &copy)
 {
-	this->setRawBits(copy.getRawBits());
+	if (this != &copy)
+		this->setRawBits(copy.getRawBits());
 	return (*this);
 }
 
