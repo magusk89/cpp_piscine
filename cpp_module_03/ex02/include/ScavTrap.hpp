@@ -6,7 +6,7 @@
 /*   By: alebarbo <alebarbo@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/15 14:45:19 by alebarbo          #+#    #+#             */
-/*   Updated: 2026/06/11 14:54:46 by alebarbo         ###   ########.fr       */
+/*   Updated: 2026/06/11 17:55:40 by alebarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 class ScavTrap : public ClapTrap
 {
-	private:
+	protected:
 		static const int	_maxHp = 100;
 		static const int	_maxEp = 50;
 		static const int	_atkDmg = 20;
