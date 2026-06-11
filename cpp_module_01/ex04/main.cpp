@@ -6,7 +6,7 @@
 /*   By: alebarbo <alebarbo@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/09 01:13:36 by alebarbo          #+#    #+#             */
-/*   Updated: 2026/03/12 23:53:32 by alebarbo         ###   ########.fr       */
+/*   Updated: 2026/06/11 14:17:52 by alebarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int main(int argc, char **argv)
 {
 	if (argc != 4)
 	{
-		std::cerr << "Error: invalid number of arguments" << std::endl;
+		std::cerr << "Usage: ./sed \"filename\" \"string a\" \"string b\"" << std::endl;
 		return (1);
 	}
 
