@@ -6,7 +6,7 @@
 /*   By: alebarbo <alebarbo@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/15 00:45:12 by alebarbo          #+#    #+#             */
-/*   Updated: 2026/03/16 00:32:11 by alebarbo         ###   ########.fr       */
+/*   Updated: 2026/06/11 16:25:51 by alebarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 int main(void)
 {
 	FragTrap	fragger("Fragger");
+
+	std::cout << fragger.getName() << " statistics: HP " << fragger.getHp() << ", EP " << fragger.getEp() << ", ATK " << fragger.getAtk() << std::endl;
 
 	fragger.attack("Clapper");
 	fragger.beRepaired(5);
