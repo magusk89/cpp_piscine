@@ -14,11 +14,10 @@
 
 int main(void)
 {
-	Zombie	*new_zombie = NULL;
-	Zombie	random_chump;
+	Zombie *brad = newZombie("Brad");
 
-	new_zombie = new_zombie->newZombie("Foo");
-	random_chump.randomChump("Bar");
-	delete new_zombie;
+	brad->announce();
+	delete brad;
+	randomChump("Brian");
 	return (0);
 }

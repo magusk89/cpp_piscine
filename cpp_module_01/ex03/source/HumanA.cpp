@@ -6,37 +6,36 @@
 /*   By: alebarbo <alebarbo@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/05 00:16:08 by alebarbo          #+#    #+#             */
-/*   Updated: 2026/01/09 00:36:36 by alebarbo         ###   ########.fr       */
+/*   Updated: 2026/06/11 01:52:27 by alebarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "HumanA.hpp"
 
-HumanA::HumanA(std::string name, Weapon &weapon) : weapon(weapon)
+HumanA::HumanA(std::string name, Weapon &weapon) : _name(name), _weapon(weapon)
 {
-	this->name = name;
 }
 
 HumanA::~HumanA(void) {}
 
 void HumanA::setWeapon(Weapon weapon)
 {
-	this->weapon = weapon;
+	this->_weapon = weapon;
 }
 
 void HumanA::setName(std::string name)
 {
-	this->name = name;
+	this->_name = name;
 }
 
 Weapon const HumanA::getWeapon(void) const
 {
-	return (this->weapon);
+	return (this->_weapon);
 }
 
 std::string const HumanA::getName(void) const
 {
-	return (this->name);
+	return (this->_name);
 }
 
 void HumanA::attack(void)

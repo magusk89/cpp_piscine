@@ -6,7 +6,7 @@
 /*   By: alebarbo <alebarbo@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/04 23:47:26 by alebarbo          #+#    #+#             */
-/*   Updated: 2026/01/09 00:35:19 by alebarbo         ###   ########.fr       */
+/*   Updated: 2026/06/11 01:52:03 by alebarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@
 class HumanA
 {
 	private:
-		Weapon				&weapon;
-		std::string			name;
+		Weapon				&_weapon;
+		std::string			_name;
 
 	public:
 							HumanA(std::string name, Weapon &weapon);

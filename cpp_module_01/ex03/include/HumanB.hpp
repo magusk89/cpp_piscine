@@ -6,7 +6,7 @@
 /*   By: alebarbo <alebarbo@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/04 23:47:37 by alebarbo          #+#    #+#             */
-/*   Updated: 2026/01/09 00:40:39 by alebarbo         ###   ########.fr       */
+/*   Updated: 2026/06/11 01:52:35 by alebarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@
 class HumanB
 {
 	private:
-		Weapon				*weapon;
-		std::string			name;
+		Weapon				*_weapon;
+		std::string			_name;
 
 	public:
 							HumanB(std::string name);

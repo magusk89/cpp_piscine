@@ -6,22 +6,15 @@
 /*   By: alebarbo <alebarbo@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/04 17:20:06 by alebarbo          #+#    #+#             */
-/*   Updated: 2026/01/04 17:42:31 by alebarbo         ###   ########.fr       */
+/*   Updated: 2026/06/11 01:08:42 by alebarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <Zombie.hpp>
 
-Zombie *Zombie::zombieHorde(int N, std::string name)
+Zombie *zombieHorde(int N, std::string name)
 {
-	Zombie *zombies;
-
-	zombies = new Zombie[N];
-	if (!zombies)
-	{
-		std::cout << "Memory allocation failed" << std::endl;
-		return (zombies);
-	}
+	Zombie *zombies = new Zombie[N];
 	for (int i = 0; i < N; i++)
 	{
 		zombies[i].setName(name);

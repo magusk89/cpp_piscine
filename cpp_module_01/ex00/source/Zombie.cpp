@@ -12,22 +12,14 @@
 
 #include <Zombie.hpp>
 
+Zombie::Zombie(std::string name) : _name(name) {}
+
 Zombie::~Zombie(void)
 {
-	std::cout << getName() << " ran away" << std::endl;
-}
-
-void Zombie::setName(std::string name)
-{
-	this->name = name;
-}
-
-std::string const Zombie::getName(void) const
-{
-	return std::string(this->name);
+	std::cout << this->_name << " ran away" << std::endl;
 }
 
 void Zombie::announce(void)
 {
-	std::cout << getName() << ": BraiiiiiiinnnzzzZ..." << std::endl;
+	std::cout << this->_name << ": BraiiiiiiinnnzzzZ..." << std::endl;
 }

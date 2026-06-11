@@ -6,7 +6,7 @@
 /*   By: alebarbo <alebarbo@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/04 23:47:17 by alebarbo          #+#    #+#             */
-/*   Updated: 2026/01/09 00:35:49 by alebarbo         ###   ########.fr       */
+/*   Updated: 2026/06/11 01:49:30 by alebarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 class Weapon
 {
 	private:
-		std::string			type;
+		std::string			_type;
 
 	public:
 							Weapon(std::string new_type);
