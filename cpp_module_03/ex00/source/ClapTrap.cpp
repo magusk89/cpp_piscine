@@ -6,7 +6,7 @@
 /*   By: alebarbo <alebarbo@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/15 00:45:41 by alebarbo          #+#    #+#             */
-/*   Updated: 2026/06/11 14:46:06 by alebarbo         ###   ########.fr       */
+/*   Updated: 2026/06/11 16:04:01 by alebarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,26 @@ ClapTrap &ClapTrap::operator=(const ClapTrap &copy)
 		_atk = copy._atk;
 	}
 	return (*this);
+}
+
+std::string ClapTrap::getName(void) const
+{
+	return (_name);
+}
+
+int ClapTrap::getHp(void) const
+{
+	return (_hp);
+}
+
+int ClapTrap::getEp(void) const
+{
+	return (_ep);
+}
+
+int ClapTrap::getAtk(void) const
+{
+	return (_atk);
 }
 
 void ClapTrap::setHp(const int hp)

@@ -6,7 +6,7 @@
 /*   By: alebarbo <alebarbo@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/15 00:46:02 by alebarbo          #+#    #+#             */
-/*   Updated: 2026/06/11 14:46:34 by alebarbo         ###   ########.fr       */
+/*   Updated: 2026/06/11 16:03:22 by alebarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,10 @@ class ClapTrap
 						ClapTrap(const ClapTrap &copy);
 						~ClapTrap();
 		ClapTrap		&operator=(const ClapTrap &copy);
+		std::string		getName(void) const;
+		int				getHp(void) const;
+		int				getEp(void) const;
+		int				getAtk(void) const;
 		void			setHp(const int hp);
 		void			setEp(const int ep);
 		void			setAtk(const int atk);
