@@ -6,7 +6,7 @@
 /*   By: alebarbo <alebarbo@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/22 22:36:41 by alebarbo          #+#    #+#             */
-/*   Updated: 2026/04/23 00:08:17 by alebarbo         ###   ########.fr       */
+/*   Updated: 2026/06/11 20:22:56 by alebarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ class WrongAnimal
 						~WrongAnimal();
 		WrongAnimal		&operator=(const WrongAnimal &copy);
 		std::string		getType() const;
-		void			setType(std::string type);
 		void			makeSound() const;
 };
 

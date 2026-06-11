@@ -6,7 +6,7 @@
 /*   By: alebarbo <alebarbo@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/22 22:35:23 by alebarbo          #+#    #+#             */
-/*   Updated: 2026/04/23 15:22:55 by alebarbo         ###   ########.fr       */
+/*   Updated: 2026/06/11 20:58:46 by alebarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@
 
 int main()
 {
-	int set = 10;
-	const Animal* animal[set];
+	int set = 5;
+	Animal* animal[set];
 
 	for (int i = 0; i < set; i++)
 	{
@@ -29,6 +29,9 @@ int main()
 		else
 			animal[i] = new Dog();
 	}
+
+	Dog basic;
+	Dog tmp = basic;
 
 	std::cout << std::endl;
 

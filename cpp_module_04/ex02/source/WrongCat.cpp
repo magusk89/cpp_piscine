@@ -6,7 +6,7 @@
 /*   By: alebarbo <alebarbo@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/22 22:38:04 by alebarbo          #+#    #+#             */
-/*   Updated: 2026/04/24 21:31:36 by alebarbo         ###   ########.fr       */
+/*   Updated: 2026/06/11 20:30:14 by alebarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,25 +14,25 @@
 
 WrongCat::WrongCat() : WrongAnimal()
 {
-	std::cout << "Default WrongCat constructor called." << std::endl;
-	this->setType("WrongCat");
+	std::cout << "Default Wrong Cat spawned." << std::endl;
+	type = "Wrong Cat";
 }
 
 WrongCat::WrongCat(const WrongCat &copy) : WrongAnimal(copy)
 {
-	std::cout << "Copy WrongCat constructor called." << std::endl;
-	this->setType(copy.getType());
+	std::cout << "Copy Wrong Cat spawned." << std::endl;
+	type = "Wrong Cat";
 }
 
 WrongCat::~WrongCat()
 {
-	std::cout << "WrongCat destructor called." << std::endl;
+	std::cout << "A Wrong Cat chose to go away..." << std::endl;
 }
 
 WrongCat &WrongCat::operator=(const WrongCat &copy)
 {
 	if (&copy != this)
-		this->setType(copy.getType());
+		type = "Wrong Cat";
 	return (*this);
 }
 
