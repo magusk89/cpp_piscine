@@ -6,7 +6,7 @@
 /*   By: alebarbo <alebarbo@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/02 22:05:41 by alebarbo          #+#    #+#             */
-/*   Updated: 2026/05/03 02:01:20 by alebarbo         ###   ########.fr       */
+/*   Updated: 2026/06/12 17:41:42 by alebarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,22 +32,22 @@ Span &Span::operator=(const Span &copy)
 {
 	if (&copy != this)
 	{
-		this->spanVector = copy.spanVector;
-		this->max = copy.max;
+		spanVector = copy.spanVector;
+		max = copy.max;
 	}
 	return (*this);
 }
 
 const unsigned int &Span::getMax() const
 {
-	return (this->max);
+	return (max);
 }
 
 void Span::addNumber(const int n)
 {
-	if (this->spanVector.size() == this->max)
+	if (spanVector.size() == max)
 		throw SpanFull();
-	this->spanVector.push_back(n);
+	spanVector.push_back(n);
 }
 
 long Span::shortestSpan()
@@ -55,7 +55,7 @@ long Span::shortestSpan()
 	if (spanVector.size() <= 1)
 		throw TooFewElements();
 
-	std::vector<int>	copy(this->spanVector);
+	std::vector<int>	copy(spanVector);
 	long				distance;
 	
 	std::sort(copy.begin(), copy.end());
@@ -71,7 +71,7 @@ long Span::longestSpan()
 	if (spanVector.size() <= 1)
 		throw TooFewElements();
 	
-	std::vector<int>	copy(this->spanVector);
+	std::vector<int>	copy(spanVector);
 
 	std::sort(copy.begin(), copy.end());
 	return (*(copy.end() - 1) - *copy.begin());
@@ -80,7 +80,7 @@ long Span::longestSpan()
 void Span::fillVector(const size_t &begin, const size_t &end)
 {
 	for (size_t i = begin; i < end; i++)
-		this->addNumber(i);
+		addNumber(i);
 }
 
 const char *Span::SpanFull::what() const throw()

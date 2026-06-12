@@ -6,7 +6,7 @@
 /*   By: alebarbo <alebarbo@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/03 02:07:01 by alebarbo          #+#    #+#             */
-/*   Updated: 2026/05/03 04:02:49 by alebarbo         ###   ########.fr       */
+/*   Updated: 2026/06/12 17:47:30 by alebarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,7 @@ template <typename T>
 MutantStack<T> &MutantStack<T>::operator=(const MutantStack<T> &copy)
 {
 	if (&copy != this)
-	{
 		this->c = copy.c;
-	}
 	return (*this);
 }
 
