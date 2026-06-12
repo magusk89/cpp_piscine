@@ -6,11 +6,26 @@
 /*   By: alebarbo <alebarbo@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/02 02:40:28 by alebarbo          #+#    #+#             */
-/*   Updated: 2026/05/02 02:41:39 by alebarbo         ###   ########.fr       */
+/*   Updated: 2026/06/12 17:26:26 by alebarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <Serializer.hpp>
+
+Serializer::Serializer() {}
+
+Serializer::Serializer(const Serializer &copy)
+{
+	(void) copy;
+}
+
+Serializer::~Serializer() {}
+
+Serializer &Serializer::operator=(const Serializer &copy)
+{
+	(void) copy;
+	return (*this);
+}
 
 uintptr_t Serializer::serialize(Data *ptr)
 {

@@ -6,11 +6,26 @@
 /*   By: alebarbo <alebarbo@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/28 02:45:40 by alebarbo          #+#    #+#             */
-/*   Updated: 2026/05/02 00:57:33 by alebarbo         ###   ########.fr       */
+/*   Updated: 2026/06/12 17:22:02 by alebarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ScalarConverter.hpp>
+
+ScalarConverter::ScalarConverter() {}
+
+ScalarConverter::ScalarConverter(const ScalarConverter &copy)
+{
+	(void) copy;
+}
+
+ScalarConverter::~ScalarConverter() {}
+
+ScalarConverter &ScalarConverter::operator=(const ScalarConverter &copy)
+{
+	(void) copy;
+	return (*this);
+}
 
 static void toInf(double convertion)
 {
