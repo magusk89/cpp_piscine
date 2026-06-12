@@ -6,7 +6,7 @@
 /*   By: alebarbo <alebarbo@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/02 16:32:51 by alebarbo          #+#    #+#             */
-/*   Updated: 2026/05/02 18:07:32 by alebarbo         ###   ########.fr       */
+/*   Updated: 2026/06/12 17:38:44 by alebarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,13 +28,13 @@ template <typename T>
 Array<T>::Array(const Array &copy) : array(new T[copy.length]), length(copy.length)
 {
 	for (unsigned int i = 0; i < this->length; i++)
-		this->array[i] = copy.array[i];
+		array[i] = copy.array[i];
 }
 
 template <typename T>
 Array<T>::~Array()
 {
-	delete [] this->array;
+	delete [] array;
 }
 
 template <typename T>
@@ -42,10 +42,12 @@ Array<T> &Array<T>::operator=(const Array<T> &copy)
 {
 	if (&copy != this)
 	{
-		this->array = new T[copy.length];
-		this->length = copy.length;
+		if (array)
+			delete array;
+		array = new T[copy.length];
+		length = copy.length;
 		for (unsigned int i = 0; i < this->length; i++)
-			this->array[i] = copy.array[i];
+			array[i] = copy.array[i];
 	}
 	return (*this);
 }
@@ -53,15 +55,15 @@ Array<T> &Array<T>::operator=(const Array<T> &copy)
 template <typename T>
 T &Array<T>::operator[](const unsigned int &index)
 {
-	if (index >= this->length)
+	if (index >= length)
 		throw OutOfBounds();
-	return (this->array[index]);
+	return (array[index]);
 }
 
 template <typename T>
 const unsigned int &Array<T>::size() const
 {
-	return (this->length);
+	return (length);
 }
 
 template <typename T>
