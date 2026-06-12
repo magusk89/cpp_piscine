@@ -31,13 +31,20 @@ PresidentialPardonForm::~PresidentialPardonForm()
 
 PresidentialPardonForm &PresidentialPardonForm::operator=(const PresidentialPardonForm &copy)
 {
-	(void) copy;
+	if (this != &copy)
+	{
+		this->setName(copy.getName());
+		this->setIsSigned(false);
+		this->setGradeToSign(copy.getGradeToSign());
+		this->setGradeToExecute(copy.getGradeToExecute());
+		const_cast<std::string&>(target) = copy.target;
+	}
 	return (*this);
 }
 
 const std::string &PresidentialPardonForm::getTarget() const
 {
-	return (this->target);
+	return (target);
 }
 
 void PresidentialPardonForm::execute(Bureaucrat const &executor) const

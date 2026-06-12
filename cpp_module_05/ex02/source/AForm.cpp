@@ -6,7 +6,7 @@
 /*   By: alebarbo <alebarbo@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/25 14:47:10 by alebarbo          #+#    #+#             */
-/*   Updated: 2026/05/02 17:06:12 by alebarbo         ###   ########.fr       */
+/*   Updated: 2026/06/12 17:11:58 by alebarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ AForm::AForm(const std::string &name, const short int &gradeToSign, const short 
 }
 
 AForm::AForm(const AForm &copy)
-	: name(copy.getName()), isSigned(false), gradeToSign(copy.getGradeToSign()), gradeToExecute(copy.getGradeToExecute())
+	: name(copy.name), isSigned(false), gradeToSign(copy.gradeToSign), gradeToExecute(copy.gradeToExecute)
 {
 }
 
@@ -34,28 +34,54 @@ AForm::~AForm()
 
 AForm &AForm::operator=(const AForm &copy)
 {
-	(void) copy;
+	if (this != &copy)
+	{
+		const_cast<std::string&>(name) = copy.name;
+		isSigned = false;
+		const_cast<short int&>(gradeToSign) = copy.gradeToSign;
+		const_cast<short int&>(gradeToExecute) = copy.gradeToExecute;
+	}
 	return (*this);
 }
 
 const std::string &AForm::getName() const
 {
-	return (this->name);
+	return (name);
 }
 
 const bool &AForm::getIsSigned() const
 {
-	return (this->isSigned);
+	return (isSigned);
 }
 
 const short int &AForm::getGradeToSign() const
 {
-	return (this->gradeToSign);
+	return (gradeToSign);
 }
 
 const short int &AForm::getGradeToExecute() const
 {
-	return (this->gradeToExecute);
+	return (gradeToExecute);
+}
+
+void AForm::setName(const std::string &name)
+{
+	const_cast<std::string&>(this->name) = name;
+}
+
+void AForm::setIsSigned(const bool &isSigned)
+{
+	this->isSigned = isSigned;
+}
+
+void AForm::setGradeToSign(const short int &gradeToSign)
+{
+	const_cast<short int&>(this->gradeToSign) = gradeToSign;
+}
+
+void AForm::setGradeToExecute(const short int &gradeToExecute)
+{
+	const_cast<short int&>(this->gradeToExecute) = gradeToExecute;
 }
 
 void AForm::beSigned(const Bureaucrat &bureaucrat)

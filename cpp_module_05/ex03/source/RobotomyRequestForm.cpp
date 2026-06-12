@@ -31,13 +31,20 @@ RobotomyRequestForm::~RobotomyRequestForm()
 
 RobotomyRequestForm &RobotomyRequestForm::operator=(const RobotomyRequestForm &copy)
 {
-	(void) copy;
+	if (this != &copy)
+	{
+		this->setName(copy.getName());
+		this->setIsSigned(false);
+		this->setGradeToSign(copy.getGradeToSign());
+		this->setGradeToExecute(copy.getGradeToExecute());
+		const_cast<std::string&>(target) = copy.target;
+	}
 	return (*this);
 }
 
 const std::string &RobotomyRequestForm::getTarget() const
 {
-	return (this->target);
+	return (target);
 }
 
 void RobotomyRequestForm::execute(Bureaucrat const &executor) const

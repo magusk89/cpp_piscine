@@ -6,7 +6,7 @@
 /*   By: alebarbo <alebarbo@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/27 22:36:03 by alebarbo          #+#    #+#             */
-/*   Updated: 2026/05/02 17:09:15 by alebarbo         ###   ########.fr       */
+/*   Updated: 2026/06/12 17:15:58 by alebarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,13 +31,20 @@ ShrubberyCreationForm::~ShrubberyCreationForm()
 
 ShrubberyCreationForm &ShrubberyCreationForm::operator=(const ShrubberyCreationForm &copy)
 {
-	(void) copy;
+	if (this != &copy)
+	{
+		this->setName(copy.getName());
+		this->setIsSigned(false);
+		this->setGradeToSign(copy.getGradeToSign());
+		this->setGradeToExecute(copy.getGradeToExecute());
+		const_cast<std::string&>(target) = copy.target;
+	}
 	return (*this);
 }
 
 const std::string &ShrubberyCreationForm::getTarget() const
 {
-	return (this->target);
+	return (target);
 }
 
 ShrubberyCreationForm::FileNotOpen::FileNotOpen()

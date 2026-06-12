@@ -6,7 +6,7 @@
 /*   By: alebarbo <alebarbo@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/25 14:46:16 by alebarbo          #+#    #+#             */
-/*   Updated: 2026/04/27 23:12:46 by alebarbo         ###   ########.fr       */
+/*   Updated: 2026/06/12 17:06:03 by alebarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,10 @@ class AForm
 		const bool			&getIsSigned() const;
 		const short int		&getGradeToSign() const;
 		const short int		&getGradeToExecute() const;
+		void				setName(const std::string &name);
+		void				setIsSigned(const bool &isSigned);
+		void				setGradeToSign(const short int &gradeToSign);
+		void				setGradeToExecute(const short int &gradeToExecute);
 		void				beSigned(const Bureaucrat &bureaucrat);
 		void				tryGrade(const short int &grade);
 		virtual void		execute(Bureaucrat const &executor) const = 0;

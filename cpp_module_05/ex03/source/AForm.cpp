@@ -6,7 +6,7 @@
 /*   By: alebarbo <alebarbo@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/25 14:47:10 by alebarbo          #+#    #+#             */
-/*   Updated: 2026/05/02 17:07:45 by alebarbo         ###   ########.fr       */
+/*   Updated: 2026/06/12 17:11:53 by alebarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,26 @@ const short int &AForm::getGradeToSign() const
 const short int &AForm::getGradeToExecute() const
 {
 	return (this->gradeToExecute);
+}
+
+void AForm::setName(const std::string &name)
+{
+	const_cast<std::string&>(this->name) = name;
+}
+
+void AForm::setIsSigned(const bool &isSigned)
+{
+	this->isSigned = isSigned;
+}
+
+void AForm::setGradeToSign(const short int &gradeToSign)
+{
+	const_cast<short int&>(this->gradeToSign) = gradeToSign;
+}
+
+void AForm::setGradeToExecute(const short int &gradeToExecute)
+{
+	const_cast<short int&>(this->gradeToExecute) = gradeToExecute;
 }
 
 void AForm::beSigned(const Bureaucrat &bureaucrat)

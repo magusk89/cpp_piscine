@@ -6,7 +6,7 @@
 /*   By: alebarbo <alebarbo@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/25 01:27:00 by alebarbo          #+#    #+#             */
-/*   Updated: 2026/05/02 17:06:29 by alebarbo         ###   ########.fr       */
+/*   Updated: 2026/06/12 16:44:39 by alebarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,30 +21,28 @@ Bureaucrat::Bureaucrat(const std::string name, const short int grade) : name(nam
 	tryGrade(grade);
 }
 
-Bureaucrat::Bureaucrat(const Bureaucrat &copy)
+Bureaucrat::Bureaucrat(const Bureaucrat &copy) : name(copy.name), grade(copy.grade)
 {
-	this->setName(copy.getName());
-	this->setGrade(copy.getGrade());
 }
 
 Bureaucrat &Bureaucrat::operator=(const Bureaucrat &copy)
 {
 	if (&copy != this)
 	{
-		this->setName(copy.getName());
-		this->setGrade(copy.getGrade());
+		name = copy.name;
+		grade = copy.grade;
 	}
 	return (*this);
 }
 
 const std::string &Bureaucrat::getName() const
 {
-	return (this->name);
+	return (name);
 }
 
 const short int &Bureaucrat::getGrade() const
 {
-	return (this->grade);
+	return (grade);
 }
 
 void Bureaucrat::setName(const std::string &name)
