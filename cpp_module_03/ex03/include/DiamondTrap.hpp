@@ -6,7 +6,7 @@
 /*   By: alebarbo <alebarbo@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/16 02:51:01 by alebarbo          #+#    #+#             */
-/*   Updated: 2026/06/11 18:09:44 by alebarbo         ###   ########.fr       */
+/*   Updated: 2026/06/16 00:25:03 by alebarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ class DiamondTrap : public ScavTrap, public FragTrap
 {
 	private:
 		std::string		_name;
-		using			FragTrap::_hp;
-		using			ScavTrap::_ep;
-		using			FragTrap::_atk;
+		using			FragTrap::_maxHp;
+		using			ScavTrap::_maxEp;
+		using			FragTrap::_atkDmg;
 	
 	public:
 						DiamondTrap();

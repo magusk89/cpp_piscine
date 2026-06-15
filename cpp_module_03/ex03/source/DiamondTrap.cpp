@@ -6,7 +6,7 @@
 /*   By: alebarbo <alebarbo@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/16 02:57:34 by alebarbo          #+#    #+#             */
-/*   Updated: 2026/06/11 18:27:10 by alebarbo         ###   ########.fr       */
+/*   Updated: 2026/06/16 00:31:01 by alebarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,26 @@
 DiamondTrap::DiamondTrap() : ClapTrap("DiamondTrap_clap_name"), ScavTrap(), FragTrap(), _name("DiamondTrap")
 {
 	std::cout << "A DiamondTrap defaults and crashes through the walls!" << std::endl;
+	_hp = _maxHp;
+	_ep = _maxEp;
+	_atk = _atkDmg;
 }
 
 DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name + "_clap_name"), ScavTrap(), FragTrap(), _name(name)
 {
 	std::cout << _name << " parametizes and crashes through the walls!" << std::endl;
+	_hp = _maxHp;
+	_ep = _maxEp;
+	_atk = _atkDmg;
 }
 
 DiamondTrap::DiamondTrap(const DiamondTrap &copy) : ClapTrap(copy), ScavTrap(copy), FragTrap(copy), _name(copy._name)
 {
 	std::cout << "A DiamondTrap crashes through the walls, copying " << copy._name << "!" << std::endl;
+	ClapTrap::_name = _name + "_clap_name";
+	_hp = copy._hp;
+	_ep = copy._ep;
+	_atk = copy._atk;
 }
 
 DiamondTrap::~DiamondTrap()
@@ -37,7 +47,7 @@ DiamondTrap &DiamondTrap::operator=(const DiamondTrap &copy)
 	std::cout << _name << " is copying " << copy._name << "!" << std::endl;
 	if (&copy != this)
 	{
-		ClapTrap::operator=(copy);
+		ClapTrap::_name = copy.ClapTrap::_name;
 		_name = copy._name;
 		_hp = copy._hp;
 		_ep = copy._ep;
