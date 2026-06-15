@@ -6,7 +6,7 @@
 /*   By: alebarbo <alebarbo@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/13 14:05:27 by alebarbo          #+#    #+#             */
-/*   Updated: 2026/06/10 22:36:54 by alebarbo         ###   ########.fr       */
+/*   Updated: 2026/06/15 14:20:26 by alebarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,15 +18,15 @@ Fixed::Fixed() : value(0)
 {
 }
 
-Fixed::Fixed(const Fixed &copy) : value(copy.getRawBits())
+Fixed::Fixed(const Fixed &copy) : value(copy.value)
 {
 }
 
-Fixed::Fixed(const int new_value) : value(new_value << this->fraction)
+Fixed::Fixed(const int new_value) : value(new_value << fraction)
 {
 }
 
-Fixed::Fixed(const float new_value) : value((int) roundf(new_value * (1 << this->fraction)))
+Fixed::Fixed(const float new_value) : value((int) roundf(new_value * (1 << fraction)))
 {
 }
 
@@ -37,39 +37,39 @@ Fixed::~Fixed()
 Fixed &Fixed::operator=(const Fixed &copy)
 {
 	if (this != &copy)
-		this->setRawBits(copy.getRawBits());
+		value = copy.value;
 	return (*this);
 }
 
 Fixed Fixed::operator+(const Fixed &copy) const
 {
-	return (this->toFloat() + copy.toFloat());
+	return (toFloat() + copy.toFloat());
 }
 
 Fixed Fixed::operator-(const Fixed &copy) const
 {
-	return (this->toFloat() - copy.toFloat());
+	return (toFloat() - copy.toFloat());
 }
 
 Fixed Fixed::operator*(const Fixed &copy) const
 {
-	return (this->toFloat() * copy.toFloat());
+	return (toFloat() * copy.toFloat());
 }
 
 Fixed Fixed::operator/(const Fixed &copy) const
 {
-	return (this->toFloat() / copy.toFloat());
+	return (toFloat() / copy.toFloat());
 }
 
 Fixed &Fixed::operator++(void)
 {
-	this->value++;
+	value++;
 	return (*this);
 }
 
 Fixed &Fixed::operator--(void)
 {
-	this->value--;
+	value--;
 	return (*this);
 }
 
@@ -77,7 +77,7 @@ Fixed Fixed::operator++(int)
 {
 	Fixed	result(*this);
 
-	this->value++;
+	value++;
 	return (result);
 }
 
@@ -85,58 +85,58 @@ Fixed Fixed::operator--(int)
 {
 	Fixed	result(*this);
 
-	this->value--;
+	value--;
 	return (result);
 }
 
 bool Fixed::operator>(const Fixed &copy) const
 {
-	return (this->toFloat() > copy.toFloat());
+	return (toFloat() > copy.toFloat());
 }
 
 bool Fixed::operator<(const Fixed &copy) const
 {
-	return (this->toFloat() < copy.toFloat());
+	return (toFloat() < copy.toFloat());
 }
 
 bool Fixed::operator>=(const Fixed &copy) const
 {
-	return (this->toFloat() >= copy.toFloat());
+	return (toFloat() >= copy.toFloat());
 }
 
 bool Fixed::operator<=(const Fixed &copy) const
 {
-	return (this->toFloat() <= copy.toFloat());
+	return (toFloat() <= copy.toFloat());
 }
 
 bool Fixed::operator==(const Fixed &copy) const
 {
-	return (this->toFloat() == copy.toFloat());
+	return (toFloat() == copy.toFloat());
 }
 
 bool Fixed::operator!=(const Fixed &copy) const
 {
-	return (this->toFloat() != copy.toFloat());
+	return (toFloat() != copy.toFloat());
 }
 
 int Fixed::getRawBits(void) const
 {
-	return (this->value);
+	return (value);
 }
 
 void Fixed::setRawBits(int const raw)
 {
-	this->value = raw;
+	value = raw;
 }
 
 float Fixed::toFloat(void) const
 {
-	return ((float) this->value / (1 << this->fraction));
+	return ((float) value / (1 << fraction));
 }
 
 int Fixed::toInt(void) const
 {
-	return ((int) roundf((float) this->value / (1 << this->fraction)));
+	return ((int) roundf((float) value / (1 << fraction)));
 }
 
 Fixed &Fixed::min(Fixed &value1, Fixed &value2)
