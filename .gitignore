@@ -57,7 +57,18 @@ bureaucrat
 form
 moreforms
 intern
-convert
+scalar
+serial
+dynamic
+whatever
+iter
+array
+easyfind
+span
+mutant
+btc
+RPN
+PmergeMe
 
 # Debug files
 *.dSYM/
@@ -77,8 +88,8 @@ dkms.conf
 # Test files
 *_shrubbery
 19920104_091532.log
-cpp_module_07/main.cpp
-cpp_module_09/data.csv
+cpp_module_09/ex00/data.csv
+cpp_module_09/ex00/input.txt
 
 # debug information files
 *.dwo
