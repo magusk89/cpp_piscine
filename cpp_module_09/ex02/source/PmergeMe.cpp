@@ -6,7 +6,7 @@
 /*   By: alebarbo <alebarbo@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/24 00:02:23 by alebarbo          #+#    #+#             */
-/*   Updated: 2026/06/24 00:25:43 by alebarbo         ###   ########.fr       */
+/*   Updated: 2026/06/24 01:00:05 by alebarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ PmergeMe &PmergeMe::operator=(const PmergeMe &copy)
 
 bool PmergeMe::parseInput(int argc, char **argv)
 {
-	for (size_t i = 1; i < argc; ++i)
+	for (int i = 1; i < argc; ++i)
 	{
 		char *end;
 		long val = std::strtol(argv[i], &end, 10);
@@ -48,10 +48,154 @@ bool PmergeMe::parseInput(int argc, char **argv)
 
 void PmergeMe::sortVector(std::vector<int> &seq)
 {
+	int n = static_cast<int>(seq.size());
+
+	if (n <= 1)
+		return;
+
+	std::vector<std::pair<int, int> > pairs;
+
+	for (int i = 0; i + 1 < n; i += 2)
+	{
+		int a = seq[i];
+		int b = seq[i + 1];
+
+		if (a < b)
+			std::swap(a, b);
+		pairs.push_back(std::make_pair(a, b));
+	}
+
+	bool hasStraggler = (n % 2 == 1);
+	int straggler = 0;
+
+	if (hasStraggler)
+		straggler = seq[n - 1];
+	
+	std::vector<int> mainChain;
+	std::vector<int> pend;
+
+	for (size_t i = 0; i < pairs.size(); ++i)
+	{
+		mainChain.push_back(pairs[i].first);
+		pend.push_back(pairs[i].second);
+	}
+	sortVector(mainChain);
+	std::sort(pairs.begin(), pairs.end());
+	pend.clear();
+	for (size_t i = 0; i < pairs.size(); ++i)
+		pend.push_back(pairs[i].second);
+	mainChain.insert(mainChain.begin(), pend[0]);
+
+	int pendSize = static_cast<int>(pend.size());
+	std::vector<bool> inserted(pendSize, false);
+
+	inserted[0] = true;
+	for (int k = 2;;++k)
+	{
+		int jk = jacobsthal(k);
+		int jk_prev = jacobsthal(k - 1);
+		int high = jk - 1;
+		int low = jk_prev;
+
+		if (low >= pendSize)
+			break;
+		if (high >= pendSize)
+			high = pendSize - 1;
+		for (int idx = high; idx >= low; --idx)
+		{
+			if (inserted[idx])
+				continue;
+
+			int pairedLarge = pairs[idx].first;
+			std::vector<int>::iterator bound = std::upper_bound(mainChain.begin(), mainChain.end(), pairedLarge);
+			std::vector<int>::iterator pos = std::lower_bound(mainChain.begin(), bound, pend[idx]);
+
+			mainChain.insert(pos, pend[idx]);
+			inserted[idx] = true;
+		}
+	}
+	if (hasStraggler)
+	{
+		std::vector<int>::iterator pos = std::lower_bound(mainChain.begin(), mainChain.end(), straggler);
+
+		mainChain.insert(pos, straggler);
+	}
+	seq = mainChain;
 }
 
 void PmergeMe::sortDeque(std::deque<int> &seq)
 {
+	int n = static_cast<int>(seq.size());
+
+	if (n <= 1)
+		return;
+
+	std::vector<std::pair<int, int> > pairs;
+
+	for (int i = 0; i + 1 < n; i += 2)
+	{
+		int a = seq[i];
+		int b = seq[i + 1];
+
+		if (a < b)
+			std::swap(a, b);
+		pairs.push_back(std::make_pair(a, b));
+	}
+
+	bool hasStraggler = (n % 2 == 1);
+	int straggler = 0;
+
+	if (hasStraggler)
+		straggler = seq[n - 1];
+	
+	std::deque<int> mainChain;
+
+	for (size_t i = 0; i < pairs.size(); ++i)
+		mainChain.push_back(pairs[i].first);
+	sortDeque(mainChain);
+	std::sort(pairs.begin(), pairs.end());
+
+	std::deque<int> pend;
+
+	for (size_t i = 0; i < pairs.size(); ++i)
+		pend.push_back(pairs[i].second);
+	mainChain.push_front(pend[0]);
+
+	int pendSize = static_cast<int>(pend.size());
+	std::vector<bool> inserted(pendSize, false);
+
+	inserted[0] = true;
+	for (int k = 2;;++k)
+	{
+		int jk = jacobsthal(k);
+		int jk_prev = jacobsthal(k - 1);
+		int high = jk - 1;
+		int low = jk_prev;
+
+		if (low >= pendSize)
+			break;
+		if (high >= pendSize)
+			high = pendSize - 1;
+		for (int idx = high; idx >= low; --idx)
+		{
+			if (inserted[idx])
+				continue;
+
+			int pairedLarge = pairs[idx].first;
+			std::deque<int>::iterator bound = std::upper_bound(mainChain.begin(), mainChain.end(), pairedLarge);
+			std::deque<int>::iterator pos = std::lower_bound(mainChain.begin(), bound, pend[idx]);
+
+			mainChain.insert(pos, pend[idx]);
+			inserted[idx] = true;
+		}
+	}
+	if (hasStraggler)
+	{
+		std::deque<int>::iterator pos = std::lower_bound(mainChain.begin(), mainChain.end(), straggler);
+
+		mainChain.insert(pos, straggler);
+	}
+	seq = mainChain;
 }
 
 void PmergeMe::run()
