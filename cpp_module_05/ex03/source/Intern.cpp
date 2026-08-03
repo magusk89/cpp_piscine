@@ -6,7 +6,7 @@
 /*   By: alebarbo <alebarbo@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/27 23:44:41 by alebarbo          #+#    #+#             */
-/*   Updated: 2026/05/02 17:08:41 by alebarbo         ###   ########.fr       */
+/*   Updated: 2026/08/03 15:45:59 by alebarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ AForm *Intern::makeForm(std::string form, std::string target)
 
 	try
 	{
-		while (i < 4 && forms[i].compare(form))
+		while (i < 3 && forms[i].compare(form))
 			i++;
 		if (i < 3)
 		{
