@@ -6,13 +6,20 @@
 /*   By: alebarbo <alebarbo@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/02 02:14:30 by alebarbo          #+#    #+#             */
-/*   Updated: 2026/05/02 02:50:47 by alebarbo         ###   ########.fr       */
+/*   Updated: 2026/08/04 00:33:48 by alebarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SERIALIZER_HPP
 # define SERIALIZER_HPP
-# include <Data.h>
+# include <iostream>
+# include <stdint.h>
+
+struct Data
+{
+	std::string		type;
+	std::string		value;
+};
 
 class Serializer
 {

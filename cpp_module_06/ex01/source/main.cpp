@@ -6,7 +6,7 @@
 /*   By: alebarbo <alebarbo@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/02 02:42:16 by alebarbo          #+#    #+#             */
-/*   Updated: 2026/05/02 02:49:45 by alebarbo         ###   ########.fr       */
+/*   Updated: 2026/08/04 00:36:43 by alebarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int main(int argc, char *argv[])
 	Data		data = {dataType, dataValue};
 	uintptr_t	serial = Serializer::serialize(&data);
 
-	std::cout << "Seralized data: " << serial << std::endl;
+	std::cout << "Serialized data: " << "0x" << std::hex << serial << std::endl;
 
 	data = *Serializer::deserialize(serial);
 
