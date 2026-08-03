@@ -6,7 +6,7 @@
 /*   By: alebarbo <alebarbo@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/02 14:05:25 by alebarbo          #+#    #+#             */
-/*   Updated: 2026/05/02 14:23:25 by alebarbo         ###   ########.fr       */
+/*   Updated: 2026/08/04 00:48:59 by alebarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,31 +31,31 @@ static Base *generate(void)
 static void identify(Base *p)
 {
 	if (dynamic_cast<A*>(p))
-		std::cout << "\'A\'" << std::endl;
+		std::cout << "Pointer: \'A\'" << std::endl;
 	if (dynamic_cast<B*>(p))
-		std::cout << "\'B\'" << std::endl;
+		std::cout << "Pointer: \'B\'" << std::endl;
 	if (dynamic_cast<C*>(p))
-		std::cout << "\'C\'" << std::endl;
+		std::cout << "Pointer: \'C\'" << std::endl;
 }
 
 static void identify(Base &p)
 {
 	try
 	{
-		(void)dynamic_cast<A&>(p);
-		std::cout << "\'A\'" << std::endl;
+		dynamic_cast<A&>(p);
+		std::cout << "Reference: \'A\'" << std::endl;
 	}
 	catch(const std::exception &e) {}
 	try
 	{
-		(void)dynamic_cast<B&>(p);
-		std::cout << "\'B\'" << std::endl;
+		dynamic_cast<B&>(p);
+		std::cout << "Reference: \'B\'" << std::endl;
 	}
 	catch(const std::exception &e) {}
 	try
 	{
-		(void)dynamic_cast<C&>(p);
-		std::cout << "\'C\'" << std::endl;
+		dynamic_cast<C&>(p);
+		std::cout << "Reference: \'C\'" << std::endl;
 	}
 	catch(const std::exception &e) {}
 	
