@@ -6,7 +6,7 @@
 /*   By: alebarbo <alebarbo@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/28 02:45:40 by alebarbo          #+#    #+#             */
-/*   Updated: 2026/06/12 17:22:02 by alebarbo         ###   ########.fr       */
+/*   Updated: 2026/08/04 00:15:02 by alebarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,74 +27,74 @@ ScalarConverter &ScalarConverter::operator=(const ScalarConverter &copy)
 	return (*this);
 }
 
-static void toInf(double convertion)
+static void toInf(double conversion)
 {
 	std::cout << "char: impossible" << std::endl;
 	std::cout << "int: impossible" << std::endl;
-	std::cout << "float: " << convertion << "f" << std::endl;
-	std::cout << "double: " << convertion << std::endl;
+	std::cout << "float: " << conversion << "f" << std::endl;
+	std::cout << "double: " << conversion << std::endl;
 }
 
-static void toChar(char convertion)
+static void toChar(char conversion)
 {
 	std::cout << "char: ";
-	if (convertion > 31 && convertion < 127)
-		std::cout << "'" << convertion << "'" << std::endl;
+	if (conversion > 31 && conversion < 127)
+		std::cout << "'" << conversion << "'" << std::endl;
 	else
 		std::cout << "character is not displayable." << std::endl;
-	std::cout << "int: " << static_cast<int>(convertion) << std::endl;
-	std::cout << "float: " << static_cast<float>(convertion) << "f" << std::endl;
-	std::cout << "double: " << static_cast<double>(convertion) << std::endl;
+	std::cout << "int: " << static_cast<int>(conversion) << std::endl;
+	std::cout << "float: " << static_cast<float>(conversion) << "f" << std::endl;
+	std::cout << "double: " << static_cast<double>(conversion) << std::endl;
 }
 
-static void toFloat(float convertion)
+static void toFloat(float conversion)
 {
 	std::cout << "char: ";
-	if (static_cast<char>(convertion) > 31 && static_cast<char>(convertion) < 127)
-		std::cout << "'" << static_cast<char>(convertion) << "'" << std::endl;
-	else if (static_cast<long int>(convertion) < -128 || static_cast<long int>(convertion) > 127)
-		std::cout << "impossible" << std::endl;
-	else
-		std::cout << "character is not displayable." << std::endl;
-	std::cout << "int: ";
-	if (static_cast<long int>(convertion) > INT_MAX || static_cast<long int>(convertion) < INT_MIN)
-		std::cout << "impossible" << std::endl;
-	else
-		std::cout << static_cast<int>(convertion) << std::endl;
-	std::cout << "float: " << convertion << "f" << std::endl;
-	std::cout << "double: " << static_cast<double>(convertion) << std::endl;
-}
-
-static void toDouble(double convertion)
-{
-	std::cout << "char: ";
-	if (static_cast<char>(convertion) > 31 && static_cast<char>(convertion) < 127)
-		std::cout << "'" << static_cast<char>(convertion) << "'" << std::endl;
-	else if (static_cast<long int>(convertion) < -128 || static_cast<long int>(convertion) > 127)
+	if (static_cast<char>(conversion) > 31 && static_cast<char>(conversion) < 127)
+		std::cout << "'" << static_cast<char>(conversion) << "'" << std::endl;
+	else if (static_cast<long int>(conversion) < -128 || static_cast<long int>(conversion) > 127)
 		std::cout << "impossible" << std::endl;
 	else
 		std::cout << "character is not displayable." << std::endl;
 	std::cout << "int: ";
-	if (static_cast<long int>(convertion) > INT_MAX || static_cast<long int>(convertion) < INT_MIN)
+	if (static_cast<long int>(conversion) > INT_MAX || static_cast<long int>(conversion) < INT_MIN)
 		std::cout << "impossible" << std::endl;
 	else
-		std::cout << static_cast<int>(convertion) << std::endl;
-	std::cout << "float: " << static_cast<float>(convertion) << "f" << std::endl;
-	std::cout << "double: " << convertion << std::endl;
+		std::cout << static_cast<int>(conversion) << std::endl;
+	std::cout << "float: " << conversion << "f" << std::endl;
+	std::cout << "double: " << static_cast<double>(conversion) << std::endl;
 }
 
-static void toInt(int convertion)
+static void toDouble(double conversion)
 {
 	std::cout << "char: ";
-	if (static_cast<char>(convertion) > 31 && static_cast<char>(convertion) < 127)
-		std::cout << "'" << static_cast<char>(convertion) << "'" << std::endl;
-	else if (convertion < -128 || convertion > 127)
+	if (static_cast<char>(conversion) > 31 && static_cast<char>(conversion) < 127)
+		std::cout << "'" << static_cast<char>(conversion) << "'" << std::endl;
+	else if (static_cast<long int>(conversion) < -128 || static_cast<long int>(conversion) > 127)
 		std::cout << "impossible" << std::endl;
 	else
 		std::cout << "character is not displayable." << std::endl;
-	std::cout << "int: " << convertion << std::endl;
-	std::cout << "float: " << std::fixed << static_cast<float>(convertion) << "f" << std::endl;
-	std::cout << "double: " << std::fixed << static_cast<double>(convertion) << std::endl;
+	std::cout << "int: ";
+	if (static_cast<long int>(conversion) > INT_MAX || static_cast<long int>(conversion) < INT_MIN)
+		std::cout << "impossible" << std::endl;
+	else
+		std::cout << static_cast<int>(conversion) << std::endl;
+	std::cout << "float: " << static_cast<float>(conversion) << "f" << std::endl;
+	std::cout << "double: " << conversion << std::endl;
+}
+
+static void toInt(int conversion)
+{
+	std::cout << "char: ";
+	if (static_cast<char>(conversion) > 31 && static_cast<char>(conversion) < 127)
+		std::cout << "'" << static_cast<char>(conversion) << "'" << std::endl;
+	else if (conversion < -128 || conversion > 127)
+		std::cout << "impossible" << std::endl;
+	else
+		std::cout << "character is not displayable." << std::endl;
+	std::cout << "int: " << conversion << std::endl;
+	std::cout << "float: " << std::fixed << static_cast<float>(conversion) << "f" << std::endl;
+	std::cout << "double: " << std::fixed << static_cast<double>(conversion) << std::endl;
 }
 
 static void toNan(void)
