@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   iter.hpp                                           :+:      :+:    :+:   */
+/*   iter.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alebarbo <alebarbo@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/02 15:05:05 by alebarbo          #+#    #+#             */
-/*   Updated: 2026/06/12 17:36:41 by alebarbo         ###   ########.fr       */
+/*   Updated: 2026/08/04 01:00:34 by alebarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,12 @@ void iter(T *array, const size_t length, void (*f)(T&))
 {
 	for (size_t i = 0; i < length; i++)
 		(*f)(array[i]);
+}
+
+template <typename T>
+void printer(T toPrint)
+{
+	std::cout << toPrint << std::endl;
 }
 
 #endif
